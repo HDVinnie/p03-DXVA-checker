@@ -70,7 +70,7 @@ function injestMediainfo(mediainfo){
 
   for (var i = 0; i < lines.length; i++) {
     // find hight
-    if (/Height[ ]+ :\ /.test(lines[i])) {
+    if (/hight[ ]+ :\ /.test(lines[i])) {
       hight = lines[i].match(/\d/g);
       hight = hight.join("");
     }
@@ -219,10 +219,12 @@ function parseResults() {
   else if (passedObject["level"] <= 4.1) {
     var compRef;
     if (passedObject["level"] == 4.1) {
-      compRef = Math.floor( (32768) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (32768) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
-          document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
+          document.getElementById("dxva").innerHTML += "Ref: to high your ref should be ";
+          document.getElementById("dxva").innerHTML += compRef;
+          document.getElementById("dxva").innerHTML += " <br>";
         }
         else {
           document.getElementById("dxva").innerHTML += "Ref: Your video is to large to be stored at this level<br>";
@@ -230,7 +232,7 @@ function parseResults() {
       }
     }
     if (passedObject["level"] == 4) {
-      compRef = Math.floor( (32768) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (32768) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -241,7 +243,7 @@ function parseResults() {
       }
     }
     if (passedObject["level"] == 3.2) {
-      compRef = Math.floor( (20480) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (20480) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -252,7 +254,7 @@ function parseResults() {
       }
     }
     if (passedObject["level"] == 3.1) {
-      compRef = Math.floor( (18000) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (18000) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -263,7 +265,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 3) {
-      compRef = Math.floor( (8100) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (8100) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -274,7 +276,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 2.2) {
-      compRef = Math.floor( (8100) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (8100) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -285,7 +287,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 2.1) {
-      compRef = Math.floor( (4752) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (4752) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -307,7 +309,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 1.3) {
-      compRef = Math.floor( (2376) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (2376) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -318,7 +320,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 1.2) {
-      compRef = Math.floor( (2376) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (2376) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -329,7 +331,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 1.1) {
-      compRef = Math.floor( (900) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (900) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -340,7 +342,7 @@ function parseResults() {
       }
     }
     else if (passedObject["level"] == 1) {
-      compRef = Math.floor( (396) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["height"] / 16 ) ) )
+      compRef = Math.floor( (396) / ( Math.ceil( passedObject["width"] / 16 ) * Math.ceil( passedObject["hight"] / 16 ) ) )
       if (passedObject["ref"] > compRef) {
         if (compRef != 0) {
           document.getElementById("dxva").innerHTML += "Ref: to high your ref should be " + compRef + " <br>";
@@ -350,6 +352,7 @@ function parseResults() {
         }
       }
     }
+    console.log(compRef);
     if (passedObject["colorSpace"] != "YUV") {
       document.getElementById("dxva").innerHTML += "ColorSpace: must be YUV<br>";
     }
@@ -430,7 +433,7 @@ function parseResults() {
       }
     }
   }
-  
+
 }
 
 function update() {
