@@ -1,0 +1,21 @@
+.container {
+  padding-top: 20px;
+}
+
+body{
+  background-color: #4f4f4f;
+  color:white;
+}
+
+html, body, .container, .col-md-6 {
+  height: 100%;
+}
+
+#mediainfo {
+  height: calc(100% - 54px);
+}
+
+#results {
+  height: calc(100% - 20px);
+  background-color: white;
+}

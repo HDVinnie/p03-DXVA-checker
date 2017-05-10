@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="checkzones.css" type="text/css">
+    <script src="checkzones.js" type="text/javascript"></script>
+    <title>
+      Mediainfo Checker
+    </title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-6">
+        <textarea id="mediainfo" placeholder="Paste your mediainfo here..." class="form-control" onchange="update();" onpaste="update();" onkeyup="update();"></textarea>
+        <center><button type="button" class="btn btn-primary btn-lg"
+                onclick="loadResults();">
+          <span class="glyphicon glyphicon" aria-hidden="true"></span>
+          Load Results
+        </button></center>
+      </div>
+      <div class="col-md-6">
+        <p>This is an explanation of what this tool does.</p><br>
+        <p>Pasting the output of a text dump of the <a href="https://mediaarea.net/en/MediaInfo">mediainfo</a> of an AVC video file in the box in the left will trigger the parsing of the input and will direct you to a new page with the results, if the input video file was encoded with x264 futher processing will be done on its encoding settings to give common issues with settings.</p><br>
+        <p>In the video compression space MPEG-4 Part 10 aka AVC video is currently considered the most universally usful codec due to the large support found for hardware decoding of the L4.1 or lower format.</p><br>
+        <p>However this codec isn't enough to ensure an AVC file can be played back on any device. Consumer decoders found in most devices that can play video adhear to the DXVA standard</p><br>
+        <p>In short the DXVA stanard only calls for the following settings:</p>
+        <ul>
+          <li>8bit video</li>
+          <li>L4.1 or less</li>
+          <li>YUV 4:2:0 chroma format</li>
+          <li>And a max refereance frame setting of no more than the following formula Floor( (level defined value) / ( Ceil( width / 16 ) * Ceil( height / 16 ) ) )</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
