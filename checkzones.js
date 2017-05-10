@@ -209,7 +209,6 @@ function loadResults() {
 
 function parseResults() {
   var passedObject = JSON.parse(sessionStorage.fileObject);
-  console.log(passedObject);
   if (passedObject["codec"] != "AVC") {
     document.getElementById("dxva").innerHTML += "Codec: must be AVC<br>";
   }
@@ -352,7 +351,6 @@ function parseResults() {
         }
       }
     }
-    console.log(compRef);
     if (passedObject["colorSpace"] != "YUV") {
       document.getElementById("dxva").innerHTML += "ColorSpace: must be YUV<br>";
     }
